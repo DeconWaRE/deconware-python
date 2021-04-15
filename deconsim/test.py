@@ -4,7 +4,7 @@ import phantoms
 import forward
 import numpy as np
 
-n=512
+n=765
 spacing_px=4
 wavelength = 500
 na=1.4
@@ -18,7 +18,7 @@ otf=psfs.paraxial_otf(n, wavelength, na, pixel_size)
 plt.figure()
 plt.imshow(otf)
 
-img = forward.forward(img, otf)
+img = forward.forward(img, otf,100,1000)
 plt.figure()
 plt.imshow(np.real(img))
 
