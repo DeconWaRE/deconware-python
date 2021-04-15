@@ -1,10 +1,10 @@
-# deconware-simulations
+# deconware-python
 
-[![License](https://img.shields.io/pypi/l/deconware-simulations.svg?color=green)](https://github.com/DeconWaRE/deconware-simulations/raw/master/LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/deconware-simulations.svg?color=green)](https://pypi.org/project/deconware-simulations)
-[![Python Version](https://img.shields.io/pypi/pyversions/deconware-simulations.svg?color=green)](https://python.org)
-[![tests](https://github.com/DeconWaRE/deconware-simulations/workflows/tests/badge.svg)](https://github.com/DeconWaRE/deconware-simulations/actions)
-[![codecov](https://codecov.io/gh/DeconWaRE/deconware-simulations/branch/master/graph/badge.svg)](https://codecov.io/gh/DeconWaRE/deconware-simulations)
+[![License](https://img.shields.io/pypi/l/deconware-python.svg?color=green)](https://github.com/DeconWaRE/deconware-python/raw/master/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/deconware-python.svg?color=green)](https://pypi.org/project/deconware-python)
+[![Python Version](https://img.shields.io/pypi/pyversions/deconware-python.svg?color=green)](https://python.org)
+[![tests](https://github.com/DeconWaRE/deconware-python/workflows/tests/badge.svg)](https://github.com/DeconWaRE/deconware-python/actions)
+[![codecov](https://codecov.io/gh/DeconWaRE/deconware-python/branch/master/graph/badge.svg)](https://codecov.io/gh/DeconWaRE/deconware-python)
 
 a deconvolution and image restoration simulation and testing framework
 
@@ -22,9 +22,9 @@ https://napari.org/docs/plugins/index.html
 
 ## Installation
 
-You can install `deconware-simulations` via [pip]:
+You can install `deconware-python` via [pip]:
 
-    pip install deconware-simulations
+    pip install deconware-python
 
 ## Contributing
 
@@ -34,7 +34,7 @@ the coverage at least stays the same before you submit a pull request.
 ## License
 
 Distributed under the terms of the [BSD-3] license,
-"deconware-simulations" is free and open source software
+"deconware-python" is free and open source software
 
 ## Issues
 
@@ -50,7 +50,7 @@ If you encounter any problems, please [file an issue] along with a detailed desc
 [Apache Software License 2.0]: http://www.apache.org/licenses/LICENSE-2.0
 [Mozilla Public License 2.0]: https://www.mozilla.org/media/MPL/2.0/index.txt
 [cookiecutter-napari-plugin]: https://github.com/napari/cookiecutter-napari-plugin
-[file an issue]: https://github.com/DeconWaRE/deconware-simulations/issues
+[file an issue]: https://github.com/DeconWaRE/deconware-python/issues
 [napari]: https://github.com/napari/napari
 [tox]: https://tox.readthedocs.io/en/latest/
 [pip]: https://pypi.org/project/pip/

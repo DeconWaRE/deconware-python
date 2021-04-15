@@ -1,9 +1,9 @@
-.. deconware-simulations documentation master file, created by
+.. deconware-python documentation master file, created by
    sphinx-quickstart on Thu Oct  1 00:43:18 2015.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to deconware-simulations's documentation!
+Welcome to deconware-python's documentation!
 ===============================================================
 
 Contents:

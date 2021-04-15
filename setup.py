@@ -25,11 +25,11 @@ with open('requirements.txt') as f:
 use_scm = {"write_to": "napari_plugin/_version.py"}
 
 setup(
-    name='deconware-simulations',
+    name='deconware-python',
     author='Brian Northan',
     author_email='bnorthan@gmail.com',
     license='BSD-3',
-    url='https://github.com/DeconWaRE/deconware-simulations',
+    url='https://github.com/DeconWaRE/deconware-python',
     description='a deconvolution and image restoration simulation and testing framework',
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
@@ -53,7 +53,7 @@ setup(
     ],
     entry_points={
         'napari.plugin': [
-            'deconware-simulations = napari_plugin',
+            'deconware-python = napari_plugin',
         ],
     },
 )

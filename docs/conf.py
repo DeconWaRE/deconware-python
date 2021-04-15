@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# deconware-simulations documentation build configuration file, created by
+# deconware-python documentation build configuration file, created by
 # sphinx-quickstart on Thu Oct  1 00:43:18 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -48,7 +48,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'deconware-simulations'
+project = u'deconware-python'
 copyright = u'2015, Brian Northan'
 author = u'Brian Northan'
 
@@ -255,7 +255,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'napari-cookiecutterplugin_name', u'deconware-simulations Documentation',
+    (master_doc, 'napari-cookiecutterplugin_name', u'deconware-python Documentation',
      [author], 1)
 ]
 
@@ -269,7 +269,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'napari-cookiecutterplugin_name', u'deconware-simulations Documentation',
+  (master_doc, 'napari-cookiecutterplugin_name', u'deconware-python Documentation',
    author, 'napari-cookiecutterplugin_name', 'One line description of project.',
    'Miscellaneous'),
 ]
