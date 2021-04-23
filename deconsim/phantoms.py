@@ -1,5 +1,5 @@
 import numpy as np
-
+import raster_geometry as rg
 
 def lines(n, spacing_px):
     size=[n,n]
@@ -16,3 +16,10 @@ def lines(n, spacing_px):
     field[int(n/2) + spacing_px, int(n/16):int(15*n/16)] = 1 
     
     return field
+
+def sphere3d(size, radius):
+    return rg.sphere(size, 20).astype(np.float32)
+
+
+
+
