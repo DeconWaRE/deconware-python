@@ -1,5 +1,7 @@
 import numpy as np
 import math
+import microscPSF.microscPSF as msPSF
+from numpy.fft import ifftn, ifftshift, fftshift
 
 def paraxial_otf(n, wavelength, numerical_aperture, pixel_size):
     nx, ny=(n,n)
@@ -23,4 +25,18 @@ def paraxial_otf(n, wavelength, numerical_aperture, pixel_size):
     v = v * (r<=filter_radius)
     otf = 2 / np.pi * (np.arccos(v) - v * np.sqrt(1 - v*v))*(r<=filter_radius);
     
-    return np.fft.ifftshift(otf)
+    return otf
+
+def paraxial_psf(n, wavelength, numerical_aperture, pixel_size):
+    otf = paraxial_otf(n, wavelength, numerical_aperture, pixel_size)
+    return fftshift(ifftn(ifftshift(otf)).astype(np.float32))
+
+def gibson_lanni_3D(NA, ni, ns, pixel_size, temp, zv, pz):
+    m_params = msPSF.m_params
+    m_params['NA']=NA
+    m_params['ni']=ni
+    m_params['ni0']=ni
+    m_params['ns']=ns
+
+
+    return msPSF.gLXYZFocalScan(m_params, pixel_size, temp, zv, pz)
