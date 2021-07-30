@@ -80,3 +80,9 @@ target/
 
 # vscode
 .vscode/
+
+# tiffs
+*.tiff
+
+# html
+html/
