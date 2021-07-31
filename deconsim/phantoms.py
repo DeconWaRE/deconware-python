@@ -18,7 +18,7 @@ def lines(n, spacing_px):
     return field
 
 def sphere3d(size, radius):
-    return rg.sphere(size, 20).astype(np.float32)
+    return rg.sphere(size, radius).astype(np.float32)
 
 
 
