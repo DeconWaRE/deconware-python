@@ -32,7 +32,8 @@ def paraxial_otf(n, wavelength, numerical_aperture, pixel_size):
 
 def paraxial_psf(n, wavelength, numerical_aperture, pixel_size):
     otf = paraxial_otf(n, wavelength, numerical_aperture, pixel_size)
-    return fftshift(ifftn(ifftshift(otf)).astype(np.float32))
+    psf = fftshift(ifftn(ifftshift(otf)).astype(np.float32))
+    return psf/psf.sum()
 
 def gibson_lanni_3D(NA, ni, ns, pixel_size, temp, zv, pz):
     m_params = msPSF.m_params
@@ -40,6 +41,5 @@ def gibson_lanni_3D(NA, ni, ns, pixel_size, temp, zv, pz):
     m_params['ni']=ni
     m_params['ni0']=ni
     m_params['ns']=ns
-
 
     return msPSF.gLXYZFocalScan(m_params, pixel_size, temp, zv, pz)
