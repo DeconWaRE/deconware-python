@@ -10,4 +10,7 @@ def forward(field, psf, max_photons, background_level, add_poisson=True):
     field_imaged = field_imaged/field_imaged.max()
     field_imaged = field_imaged*max_photons+background_level
 
-    return poisson(field_imaged.astype(float))
+    if add_poisson:
+        return poisson(field_imaged.astype(float))
+    else:
+        return field_imaged.astype(float)
