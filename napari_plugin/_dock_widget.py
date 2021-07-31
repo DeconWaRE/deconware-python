@@ -8,10 +8,13 @@ Replace code below according to your needs.
 """
 from napari_plugin_engine import napari_hook_implementation
 from qtpy.QtWidgets import QWidget, QHBoxLayout, QPushButton
+
 from deconsim import phantoms
 from deconsim.forward import forward
 from deconsim.psfs import paraxial_psf
 from deconsim.psfs import gibson_lanni_3D
+from deconsim.richardson_lucy import richardson_lucy_cp, richardson_lucy_np
+
 import numpy as np
 from qtpy.QtWidgets import QSpinBox, QDoubleSpinBox
 
@@ -44,7 +47,7 @@ class Plugin(QWidget):
 
     def _on_click_2dlines(self):
         print("napari has", len(self.viewer.layers), "layers")
-
+        
         n=512
         spacing_px=4
         wavelength = 500
@@ -54,28 +57,39 @@ class Plugin(QWidget):
         field = phantoms.lines(n,spacing_px)
         self.field = self.viewer.add_image(field)
         self.psf=paraxial_psf(n, wavelength, na, pixel_size)
-        imaged = forward(field, self.psf, 100, self.background_sp.value()) 
+        
+        imaged = forward(field, self.psf, 1000, self.background_sp.value()) 
         self.imaged=self.viewer.add_image(imaged)
+        
+        rl = richardson_lucy_cp(imaged, self.psf, 100)
+        self.rl = self.viewer.add_image(rl)
+        
 
     def _on_click_3dsphere(self):
-
+        
         size=[50,100,100]
         pixel_size = 0.05
 
         zv = np.arange(-size[0]*pixel_size/2, size[0]*pixel_size/2, pixel_size)
 
-        field = phantoms.sphere3d(size,20) #rg.sphere(size, 20).astype(np.float32)
+        field = phantoms.sphere3d(size,10) #rg.sphere(size, 20).astype(np.float32)
 
         self.field=self.viewer.add_image(field)
         
         self.psf = gibson_lanni_3D(1.4, 1.53, 1.4, pixel_size, 100, zv, 0.1)
+        
         imaged = forward(field, self.psf, 100, self.background_sp.value())
         self.imaged = self.viewer.add_image(imaged)
 
+        rl = richardson_lucy_cp(imaged, self.psf, 100)
+        self.rl = self.viewer.add_image(rl)
+        
     def _background_changed(self):
+        
         print(self.background_sp.value())
         imaged = forward(self.field.data, self.psf, 100, self.background_sp.value()) 
         self.imaged.data = imaged
+        
 
 @napari_hook_implementation
 def napari_experimental_provide_dock_widget():
