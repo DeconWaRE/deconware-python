@@ -2,6 +2,9 @@ import numpy as np
 import raster_geometry as rg
 
 def lines(n, spacing_px):
+    '''
+        Note this function inspired by code from https://github.com/jdmanton/rl_positivity_sim by James Manton
+    '''
     size=[n,n]
     field=np.empty(size,'float32')
 

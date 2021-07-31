@@ -4,6 +4,9 @@ import microscPSF.microscPSF as msPSF
 from numpy.fft import ifftn, ifftshift, fftshift
 
 def paraxial_otf(n, wavelength, numerical_aperture, pixel_size):
+    '''
+        Note this function inspired by code from https://github.com/jdmanton/rl_positivity_sim by James Manton
+    '''
     nx, ny=(n,n)
     
     resolution  = 0.5 * wavelength / numerical_aperture
