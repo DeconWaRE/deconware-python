@@ -2,7 +2,7 @@ from numpy.fft import fftn, ifftn, fftshift
 from numpy.random import poisson
 
 def forward(field, psf, max_photons, background_level, add_poisson=True):
-     '''
+    '''
         Note this function inspired by code from https://github.com/jdmanton/rl_positivity_sim by James Manton
     '''
     otf = fftn(fftshift(psf))
