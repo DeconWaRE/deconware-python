@@ -4,10 +4,10 @@ import phantoms
 import forward
 import numpy as np
 
-xy_size=int(1024);
-z_size=int(400);
+xy_size=int(512);
+z_size=int(100);
 num_blocks=int(4);
-r=70
+r=30
 
 full_size=[z_size, xy_size, xy_size];
 block_size=[z_size, int(xy_size/num_blocks), int(xy_size/num_blocks)];
